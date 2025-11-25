@@ -17,14 +17,14 @@ const Index = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const { toast } = useToast();
 
-  const handleAddToEnquiry = (product: Product, variant: string) => {
+  const handleAddToEnquiry = (product: Product, variant: string, quantity: number) => {
     const existingItemIndex = cartItems.findIndex(
       (item) => item.id === `${product.id}-${variant}`
     );
 
     if (existingItemIndex >= 0) {
       const newItems = [...cartItems];
-      newItems[existingItemIndex].quantity += 1;
+      newItems[existingItemIndex].quantity += quantity;
       setCartItems(newItems);
     } else {
       setCartItems([
@@ -33,7 +33,7 @@ const Index = () => {
           id: `${product.id}-${variant}`,
           name: product.name,
           variant,
-          quantity: 1,
+          quantity,
           notes: "",
         },
       ]);
@@ -41,7 +41,7 @@ const Index = () => {
 
     toast({
       title: "Added to Enquiry Cart",
-      description: `${product.name} (${variant}) has been added to your enquiry.`,
+      description: `${quantity}x ${product.name} (${variant}) added to your enquiry.`,
     });
   };
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -21,16 +21,20 @@ export interface Product {
 
 interface ProductCardProps {
   product: Product;
-  onAddToEnquiry: (product: Product, variant: string) => void;
+  onAddToEnquiry: (product: Product, variant: string, quantity: number) => void;
 }
 
 export const ProductCard = ({ product, onAddToEnquiry }: ProductCardProps) => {
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
+  const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToEnquiry = () => {
-    onAddToEnquiry(product, selectedVariant);
+    onAddToEnquiry(product, selectedVariant, quantity);
   };
+
+  const incrementQuantity = () => setQuantity((prev) => prev + 1);
+  const decrementQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   return (
     <div
@@ -94,6 +98,28 @@ export const ProductCard = ({ product, onAddToEnquiry }: ProductCardProps) => {
               ))}
             </SelectContent>
           </Select>
+
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={decrementQuantity}
+              className="h-10 w-10"
+            >
+              <Minus className="h-4 w-4" />
+            </Button>
+            <div className="flex-1 text-center">
+              <span className="text-lg font-semibold text-foreground">{quantity}</span>
+            </div>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={incrementQuantity}
+              className="h-10 w-10"
+            >
+              <Plus className="h-4 w-4" />
+            </Button>
+          </div>
 
           <Button
             onClick={handleAddToEnquiry}
