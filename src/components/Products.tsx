@@ -11,7 +11,7 @@ import napkinsImg from "@/assets/napkins.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ProductsProps {
-  onAddToEnquiry: (product: Product, variant: string) => void;
+  onAddToEnquiry: (product: Product, variant: string, quantity: number) => void;
 }
 
 export const Products = ({ onAddToEnquiry }: ProductsProps) => {
