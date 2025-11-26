@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,8 +12,8 @@ import {
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-gsap.registerPlugin(ScrollTrigger);
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -29,27 +27,19 @@ export const Contact = () => {
   });
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".contact-item", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.2,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+    });
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Enquiry Submitted!",
-      description: "Thank you for contacting DAB'N'KLEAN. We'll get back to you shortly.",
+      description:
+        "Thank you for contacting DAB'N'KLEAN. We'll get back to you shortly.",
     });
     setFormData({
       name: "",
@@ -70,32 +60,76 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-accent">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Whether you're a consumer or a business, we're here to help. Reach out
-              with any questions or enquiries.
-            </p>
-          </div>
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-20 bg-accent relative overflow-hidden"
+    >
+      {/* soft background accents */}
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute -top-24 -right-10 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute bottom-0 -left-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+      </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="contact-item glass-card rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold text-foreground mb-6">
-                Contact Information
-              </h3>
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Heading */}
+        <div
+          className="max-w-3xl mx-auto text-center mb-10 contact-heading"
+          data-aos="fade-up"
+        >
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-3">
+            Contact Us
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3">
+            Let&apos;s Talk Hygiene &amp; Bulk Orders
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground">
+            Whether you&apos;re a home user, retailer, or HoReCa partner, the
+            DAB&apos;N&apos;KLEAN team is just a message away.
+          </p>
+        </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
+        {/* Full-width glass panel */}
+        <div
+          className="
+            relative w-full rounded-3xl bg-[#FFEBEB]/30
+            shadow-xl px-5 py-8 sm:px-8 sm:py-10
+          "
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {/* subtle top gradient accent */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-primary/60 via-primary to-primary/40 rounded-t-3xl" />
+
+          <div className="grid gap-10 lg:gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)]">
+            {/* LEFT: Info */}
+            <div
+              className="contact-info space-y-8"
+              data-aos="fade-right"
+              data-aos-delay="150"
+            >
+              <div>
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
+                  Reach the DAB&apos;N&apos;KLEAN Team
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground">
+                  Prefer a quick call, detailed email, or just want to drop a
+                  note? Choose what works best for you — we&apos;ll take it from
+                  there.
+                </p>
+              </div>
+
+              <div className="space-y-5">
+                <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="180">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Address</h4>
-                    <p className="text-muted-foreground">
-                      DAB'N'KLEAN Headquarters
+                    <h4 className="font-semibold text-foreground mb-1">
+                      Visit Us
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      DAB&apos;N&apos;KLEAN Headquarters
                       <br />
                       123 Hygiene Avenue, Business District
                       <br />
@@ -104,56 +138,100 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="210">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground">info@dabnklean.com</p>
-                    <p className="text-muted-foreground">b2b@dabnklean.com</p>
+                    <h4 className="font-semibold text-foreground mb-1">
+                      Email
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      info@dabnklean.com
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      b2b@dabnklean.com
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="240">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-semibold text-foreground mb-1">
+                      Phone
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      +1 (555) 123-4567
+                    </p>
+                    <p className="text-sm text-muted-foreground">
                       B2B Hotline: +1 (555) 123-4568
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-border">
-                <h4 className="font-semibold text-foreground mb-4">Business Hours</h4>
-                <div className="space-y-2 text-muted-foreground">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
+              <div
+                className="pt-4 border-t border-border/60"
+                data-aos="fade-up"
+                data-aos-delay="270"
+              >
+                <h4 className="font-semibold text-foreground mb-2 text-sm md:text-base">
+                  Business Hours (IST)
+                </h4>
+                <div className="text-xs md:text-sm text-muted-foreground space-y-1">
+                  <p>Monday – Friday: 9:00 AM – 6:00 PM</p>
+                  <p>Saturday: 10:00 AM – 4:00 PM</p>
                   <p>Sunday: Closed</p>
                 </div>
               </div>
             </div>
 
-            <div className="contact-item glass-card rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold text-foreground mb-6">
-                Send Us a Message
-              </h3>
+            {/* RIGHT: Form */}
+            <div
+              className="contact-form"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div className="mb-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-primary mb-2">
+                  Quick enquiry form
+                </p>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground">
+                  Tell us what you&apos;re looking for
+                </h3>
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your full name"
-                  />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div data-aos="fade-up" data-aos-delay="230">
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div data-aos="fade-up" data-aos-delay="260">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
                 </div>
 
-                <div>
+                <div data-aos="fade-up" data-aos-delay="290">
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
@@ -166,20 +244,7 @@ export const Contact = () => {
                   />
                 </div>
 
-                <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-
-                <div>
+                <div data-aos="fade-up" data-aos-delay="320">
                   <Label htmlFor="inquiryType">Type of Inquiry</Label>
                   <Select
                     value={formData.inquiryType}
@@ -192,15 +257,19 @@ export const Contact = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="general">General Inquiry</SelectItem>
-                      <SelectItem value="household">Household Order</SelectItem>
+                      <SelectItem value="household">
+                        Household Order
+                      </SelectItem>
                       <SelectItem value="b2b">B2B / Bulk Order</SelectItem>
-                      <SelectItem value="distributor">Distributor Interest</SelectItem>
+                      <SelectItem value="distributor">
+                        Distributor Interest
+                      </SelectItem>
                       <SelectItem value="support">Product Support</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                <div>
+                <div data-aos="fade-up" data-aos-delay="350">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
@@ -213,9 +282,11 @@ export const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full" size="lg">
-                  Submit Enquiry
-                </Button>
+                <div data-aos="fade-up" data-aos-delay="380">
+                  <Button type="submit" className="w-full" size="lg">
+                    Submit Enquiry
+                  </Button>
+                </div>
               </form>
             </div>
           </div>

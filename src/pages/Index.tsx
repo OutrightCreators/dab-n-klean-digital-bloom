@@ -11,6 +11,7 @@ import { EnquiryCart, CartItem } from "@/components/EnquiryCart";
 import { TissueBoxAnimation } from "@/components/TissueBoxAnimation";
 import { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -71,7 +72,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation onCartOpen={() => setCartOpen(true)} cartItemCount={cartItems.length} />
       <Hero />
-      <About />
+      
       <Products onAddToEnquiry={handleAddToEnquiry} />
       <Quality />
       <B2B onEnquiryOpen={() => setCartOpen(true)} />
@@ -86,7 +87,9 @@ const Index = () => {
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
       />
+      
       <TissueBoxAnimation />
+      <Footer />
     </div>
   );
 };

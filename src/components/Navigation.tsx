@@ -22,8 +22,8 @@ export const Navigation = ({ onCartOpen, cartItemCount }: NavigationProps) => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-foreground">
-            DAB'N'KLEAN
+          <div className="flex items-center">
+            <img src="/images/DNK-logo.webp" alt="DAB'N'KLEAN logo" className="h-8 w-auto object-contain" />
           </div>
 
           {/* Desktop Navigation */}

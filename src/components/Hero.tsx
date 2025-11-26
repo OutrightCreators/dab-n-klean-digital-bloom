@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Droplets, Shield, Leaf } from "lucide-react";
-import heroImage from "@/assets/hero-tissue.jpg";
+import heroImage from "/images/dnk.jpg";
 
 export const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -64,87 +64,117 @@ export const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
-      style={{
-        backgroundImage: `linear-gradient(rgba(240, 240, 245, 0.9), rgba(240, 240, 245, 0.85)), url(${heroImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative min-h-screen pt-20 bg-[#FFE7E8] overflow-hidden"
     >
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1
-            ref={headlineRef}
-            className="text-5xl md:text-7xl font-bold text-foreground mb-6"
-          >
-            DAB'N'KLEAN — Softness You Feel.{" "}
-            <span className="text-primary">Hygiene You Trust.</span>
-          </h1>
+      {/* TOP IMAGE BLOCK – fixed height, anchored from bottom */}
+      <div className="w-full bg-[#FFE7E8]">
+        <div
+          className="
+            relative w-full
+            h-[460px] sm:h-[520px] md:h-[700px] lg:h-[730px]
+          "
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-bottom"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+            }}
+          />
+        </div>
+      </div>
 
-          <p
-            ref={subheadRef}
-            className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
-          >
-            Premium tissue and hygiene products for every need. From kitchens to
-            bathrooms, offices to restaurants — experience the perfect blend of
-            comfort and cleanliness.
-          </p>
-
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("products")}
-              className="text-lg"
+      {/* FULL-WIDTH GLASS BAR – overlaps the image */}
+      <div
+        className="
+          relative w-full
+          -mt-16 sm:-mt-24 md:-mt-32 lg:-mt-64
+          bg-[#FFE7E8]/30 
+          
+          
+        "
+      >
+        {/* Inner content container (centers text/cards) */}
+        <div className="container mx-auto px-4 pb-16 pt-8 md:pt-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1
+              ref={headlineRef}
+              className="text-3xl md:text-5xl font-bold text-foreground mb-6"
             >
-              Explore Products
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("b2b")}
-              className="text-lg"
+              DAB&apos;N&apos;KLEAN — Softness You Feel.{" "}
+              <span className="text-primary">Hygiene You Trust.</span>
+            </h1>
+
+            <p
+              ref={subheadRef}
+              className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
             >
-              Bulk Order Enquiry
-            </Button>
-          </div>
+              Premium tissue and hygiene products for every need. From kitchens
+              to bathrooms, offices to restaurants — experience the perfect
+              blend of comfort and cleanliness.
+            </p>
 
-          <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
-              <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">Ultra Soft</h3>
-              <p className="text-sm text-muted-foreground">
-                Gentle on sensitive skin
-              </p>
+            <div
+              ref={ctaRef}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            >
+              <Button
+                size="lg"
+                onClick={() => scrollToSection("products")}
+                className="text-base sm:text-lg w-full sm:w-auto"
+              >
+                Explore Products
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("b2b")}
+                className="text-base sm:text-lg w-full sm:w-auto"
+              >
+                Bulk Order Enquiry
+              </Button>
             </div>
 
-            <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
-              <Droplets className="h-10 w-10 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">
-                Highly Absorbent
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Maximum cleaning power
-              </p>
-            </div>
+            <div
+              ref={cardsRef}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
+                <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">Ultra Soft</h3>
+                <p className="text-sm text-muted-foreground">
+                  Gentle on sensitive skin
+                </p>
+              </div>
 
-            <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
-              <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">
-                Dermatologically Tested
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Safe for all skin types
-              </p>
-            </div>
+              <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
+                <Droplets className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">
+                  Highly Absorbent
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Maximum cleaning power
+                </p>
+              </div>
 
-            <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
-              <Leaf className="h-10 w-10 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">
-                Eco-Conscious
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Responsibly sourced materials
-              </p>
+              <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
+                <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">
+                  Dermatologically Tested
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Safe for all skin types
+                </p>
+              </div>
+
+              <div className="value-card glass-card rounded-lg p-6 hover:scale-105 transition-transform">
+                <Leaf className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">
+                  Eco-Conscious
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Responsibly sourced materials
+                </p>
+              </div>
             </div>
           </div>
         </div>
