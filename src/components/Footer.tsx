@@ -17,7 +17,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-[#DA2576] text-white mt-16">
+    <footer className="bg-primary text-primary-foreground mt-16">
       {/* Top section */}
       <div className="container mx-auto px-4 pt-12 pb-6">
         <div
