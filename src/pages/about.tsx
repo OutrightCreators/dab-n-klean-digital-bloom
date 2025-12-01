@@ -11,6 +11,8 @@ import {
   Quote,
 } from "lucide-react";
 import heroImage from "/images/dnk.jpg";
+import heroVideo from "/videos/dnk01.mp4";
+
 
 const AboutPage = () => {
   // Simple local cart state just to satisfy Navigation props
@@ -29,37 +31,43 @@ const AboutPage = () => {
 
       <main className="flex-1">
         {/* HERO + BREADCRUMB */}
-        <section className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] overflow-hidden mt-[65px]">
-          {/* Background image */}
-          <div className="absolute inset-0">
-            <div
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${heroImage})` }}
-            />
-            {/* Light overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/35 to-black/65" />
-          </div>
+        <section className="relative w-full h-[400px] sm:h-[320px] md:h-[580px] overflow-hidden mt-[65px]">
+  {/* Background video */}
+  <div className="absolute inset-0">
+    <video
+      className="w-full h-full object-cover"
+      src={heroVideo}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+    />
+    {/* Dark overlay on top of video */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/35 to-black/65" />
+  </div>
 
-          {/* Content */}
-          <div className="relative h-full max-w-5xl mx-auto px-4 flex flex-col justify-end pb-10">
-            {/* Breadcrumb */}
-            <p className="text-xs sm:text-sm text-white/80 mb-2">
-              <span className="cursor-pointer hover:text-[#FFD6E8] transition-colors">
-                Home
-              </span>
-              <span className="mx-2">/</span>
-              <span className="font-medium">About</span>
-            </p>
+  {/* Content */}
+  <div className="relative h-full max-w-5xl mx-auto px-4 flex flex-col justify-end pb-10">
+    {/* Breadcrumb */}
+    <p className="text-xs sm:text-sm text-white/80 mb-2">
+      <span className="cursor-pointer hover:text-[#FFD6E8] transition-colors">
+        Home
+      </span>
+      <span className="mx-2">/</span>
+      <span className="font-medium">About</span>
+    </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-              About DAB&apos;N&apos;KLEAN
-            </h1>
-            <p className="mt-2 text-sm sm:text-base text-white/80 max-w-xl">
-              Softness, hygiene, and trust — delivered in every sheet. Get to
-              know the story and standards behind DAB&apos;N&apos;KLEAN.
-            </p>
-          </div>
-        </section>
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+      About DAB&apos;N&apos;KLEAN
+    </h1>
+    <p className="mt-2 text-sm sm:text-base text-white/80 max-w-xl">
+      Softness, hygiene, and trust — delivered in every sheet. Get to
+      know the story and standards behind DAB&apos;N&apos;KLEAN.
+    </p>
+  </div>
+</section>
+
 
         {/* ABOUT SECTION */}
         <section className="py-16 md:py-20 bg-background">
@@ -193,7 +201,7 @@ const AboutPage = () => {
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-2xl border border-primary/10 bg-[#FFF2F3] px-5 py-6 text-center">
+              <div className="rounded-2xl border border-primary/10 bg-blue-50 px-5 py-6 text-center">
                 <ShieldCheck className="h-9 w-9 mx-auto text-primary mb-3" />
                 <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">
                   Certified Quality
@@ -203,7 +211,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-primary/10 bg-[#FFF2F3] px-5 py-6 text-center">
+              <div className="rounded-2xl border border-primary/10 bg-blue-50 px-5 py-6 text-center">
                 <Sparkles className="h-9 w-9 mx-auto text-primary mb-3" />
                 <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">
                   Soft, Strong &amp; Safe
@@ -214,7 +222,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-primary/10 bg-[#FFF2F3] px-5 py-6 text-center">
+              <div className="rounded-2xl border border-primary/10 bg-blue-50 px-5 py-6 text-center">
                 <Leaf className="h-9 w-9 mx-auto text-primary mb-3" />
                 <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">
                   Eco-Conscious Approach
@@ -292,17 +300,17 @@ const AboutPage = () => {
         </section>
 
         {/* CTA SECTION */}
-        <section className="py-14 md:py-16 bg-[#DA2576]">
+        <section className="py-14 md:py-16 bg-primary-foreground">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
               <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-white/80 mb-2">
+                <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">
                   Partner With DAB&apos;N&apos;KLEAN
                 </p>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
                   Ready to stock premium hygiene products?
                 </h2>
-                <p className="text-sm md:text-base text-white/85 max-w-2xl">
+                <p className="text-sm md:text-base text-primary/85 max-w-2xl">
                   Talk to us about custom packs, regular supply, or HoReCa bulk
                   requirements. We&apos;ll help you choose the right mix for
                   your needs.
@@ -312,7 +320,7 @@ const AboutPage = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
-                  className="bg-white text-[#DA2576] hover:bg-[#FFF2F3]"
+                  className="bg-white text-primary hover:bg-primary/10"
                   onClick={() => {
                     const el = document.getElementById("contact");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -323,7 +331,7 @@ const AboutPage = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white/10"
+                  className="border-white text-primary hover:bg-white/10"
                   onClick={() => {
                     const el = document.getElementById("products");
                     if (el) el.scrollIntoView({ behavior: "smooth" });

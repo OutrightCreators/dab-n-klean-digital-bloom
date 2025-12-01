@@ -18,7 +18,7 @@ export const Quality = () => {
     <section
       id="quality"
       ref={sectionRef}
-      className="py-20 bg-[#DA2576] text-white"
+      className="py-20 bg-primary text-white"
     >
       <div className="container mx-auto px-4">
         {/* Heading block */}
@@ -38,7 +38,7 @@ export const Quality = () => {
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 */}
           <div
-            className="quality-item group relative overflow-hidden rounded-2xl bg-[#FFF2F3]/95 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
+            className="quality-item group relative overflow-hidden rounded-2xl bg-blue-50 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
             data-aos="zoom-in-up"
             data-aos-delay="0"
           >
@@ -47,16 +47,16 @@ export const Quality = () => {
               className="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
                 background:
-                  "radial-gradient(circle at 10% 0%, rgba(218,37,118,0.30), transparent 55%)",
+                  "radial-gradient(circle at 10% 0%, rgba(40,38,30,0.30), transparent 45%)",
               }}
             />
             <div className="relative">
               <div
-                className="inline-flex items-center justify-center rounded-2xl bg-[#DA2576]/10 p-3 mb-4"
+                className="inline-flex items-center justify-center rounded-2xl bg-accent p-3 mb-4"
                 data-aos="fade-down"
                 data-aos-delay="50"
               >
-                <Shield className="h-8 w-8 text-[#DA2576]" />
+                <Shield className="h-8 w-8 text-primary" />
               </div>
 
               <h3
@@ -82,7 +82,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>ISO-certified production set-up</span>
                 </li>
                 <li
@@ -90,7 +90,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="240"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Multi-stage quality checks for every batch</span>
                 </li>
                 <li
@@ -98,7 +98,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="280"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Regular third-party audits</span>
                 </li>
               </ul>
@@ -107,7 +107,7 @@ export const Quality = () => {
 
           {/* Card 2 */}
           <div
-            className="quality-item group relative overflow-hidden rounded-2xl bg-[#FFF2F3]/95 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
+            className="quality-item group relative overflow-hidden rounded-2xl bg-blue-50 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
             data-aos="zoom-in-up"
             data-aos-delay="150"
           >
@@ -115,16 +115,16 @@ export const Quality = () => {
               className="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
                 background:
-                  "radial-gradient(circle at 90% 0%, rgba(218,37,118,0.30), transparent 55%)",
+                  "radial-gradient(circle at 50% 100%, rgba(40,38,30,0.30), transparent 45%)",
               }}
             />
             <div className="relative">
               <div
-                className="inline-flex items-center justify-center rounded-2xl bg-[#DA2576]/10 p-3 mb-4"
+                className="inline-flex items-center justify-center rounded-2xl bg-accent p-3 mb-4"
                 data-aos="fade-down"
                 data-aos-delay="200"
               >
-                <Heart className="h-8 w-8 text-[#DA2576]" />
+                <Heart className="h-8 w-8 text-primary" />
               </div>
 
               <h3
@@ -149,7 +149,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="340"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Dermatologically tested tissues</span>
                 </li>
                 <li
@@ -157,7 +157,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="380"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Hypoallergenic, gentle on sensitive skin</span>
                 </li>
                 <li
@@ -165,7 +165,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="420"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Food-safe certified butter &amp; wrapping paper</span>
                 </li>
               </ul>
@@ -174,7 +174,7 @@ export const Quality = () => {
 
           {/* Card 3 */}
           <div
-            className="quality-item group relative overflow-hidden rounded-2xl bg-[#FFF2F3]/95 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
+            className="quality-item group relative overflow-hidden rounded-2xl bg-blue-50 p-6 sm:p-7 shadow-lg backdrop-blur-xl border border-white/40 text-foreground transition-transform duration-300 hover:-translate-y-2"
             data-aos="zoom-in-up"
             data-aos-delay="300"
           >
@@ -182,16 +182,16 @@ export const Quality = () => {
               className="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
                 background:
-                  "radial-gradient(circle at 50% 100%, rgba(218,37,118,0.32), transparent 60%)",
+                  "radial-gradient(circle at 90% 0%, rgba(40,38,30,0.32), transparent 60%)",
               }}
             />
             <div className="relative">
               <div
-                className="inline-flex items-center justify-center rounded-2xl bg-[#DA2576]/10 p-3 mb-4"
+                className="inline-flex items-center justify-center rounded-2xl bg-accent p-3 mb-4"
                 data-aos="fade-down"
                 data-aos-delay="350"
               >
-                <Leaf className="h-8 w-8 text-[#DA2576]" />
+                <Leaf className="h-8 w-8 text-primary" />
               </div>
 
               <h3
@@ -216,7 +216,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="490"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Sustainably sourced pulp &amp; fibres</span>
                 </li>
                 <li
@@ -224,7 +224,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="530"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Reduced plastic, recyclable-first packaging</span>
                 </li>
                 <li
@@ -232,7 +232,7 @@ export const Quality = () => {
                   data-aos="fade-up"
                   data-aos-delay="570"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#DA2576] mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>Energy-efficient manufacturing practices</span>
                 </li>
               </ul>

@@ -38,7 +38,10 @@ export const B2B = ({ onEnquiryOpen }: B2BProps) => {
   };
 
   return (
-    <section id="b2b" ref={sectionRef} className="py-20 bg-accent">
+    <section id="b2b" ref={sectionRef} className="py-20 bg-gradient-to-b
+        from-[#f5fcff]
+        via-[#73cbfe]
+        to-[#1b9ce4]/18">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -118,7 +121,7 @@ export const B2B = ({ onEnquiryOpen }: B2BProps) => {
               </div>
             </div>
 
-            <div className="bg-background/50 rounded-xl p-6 mb-8">
+            {/* <div className="bg-background/50 rounded-xl p-6 mb-8">
               <h4 className="font-semibold text-foreground mb-4 text-center">
                 Industries We Serve
               </h4>
@@ -145,7 +148,7 @@ export const B2B = ({ onEnquiryOpen }: B2BProps) => {
                   Catering Services
                 </span>
               </div>
-            </div>
+            </div> */}
 
             <div className="text-center">
               <Button size="lg" onClick={scrollToContact} className="mr-4">

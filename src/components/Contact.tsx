@@ -63,12 +63,12 @@ export const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 bg-accent relative overflow-hidden"
+      className="py-20 bg-blue-50 relative overflow-hidden"
     >
       {/* soft background accents */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -top-24 -right-10 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute bottom-0 -left-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -top-24 -right-10 h-64 w-64 rounded-full " />
+        <div className="absolute bottom-0 -left-10 h-72 w-72 rounded-full " />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -121,7 +121,7 @@ export const Contact = () => {
 
               <div className="space-y-5">
                 <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="180">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/10">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -139,7 +139,7 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="210">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/10">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -156,7 +156,7 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-3" data-aos="fade-up" data-aos-delay="240">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/10">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>

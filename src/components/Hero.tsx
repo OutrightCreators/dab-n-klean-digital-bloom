@@ -147,10 +147,8 @@ export const Hero = () => {
                 text-3xl md:text-4xl font-bold text-foreground mb-7
               "
             >
-              DAB&apos;N&apos;KLEAN — Softness You Feel. <br />
-              <span className="text-primary-foreground">
+              DAB&apos;N&apos;KLEAN — <span className="text-primary-foreground shadow-sm">Softness You Feel.</span> <br />
                 Hygiene You Trust.
-              </span>
             </h1>
 
             <div

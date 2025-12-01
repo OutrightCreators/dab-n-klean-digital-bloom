@@ -161,7 +161,7 @@ export const TissueBoxAnimation = () => {
           setIsCollapsed(true);
         }}
       >
-        <Minus className="h-4 w-4 text-[#DB3883]" />
+        <Minus className="h-4 w-4 text-primary" />
       </Button>
 
       <div className="relative w-full h-full flex items-end justify-center">
@@ -196,8 +196,8 @@ export const TissueBoxAnimation = () => {
         {/* Box */}
         <div className="relative z-10 w-[92%] h-[52%]">
           {/* Front face */}
-          <div className="absolute inset-x-0 bottom-0 h-[72%] rounded-xl bg-[#DB3883] shadow-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#c72f74] via-[#DB3883] to-[#f87fb3] opacity-90" />
+          <div className="absolute inset-x-0 bottom-0 h-[72%] rounded-xl bg-[#0177D1] shadow-lg overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#00A7DE] via-[#0177D1] to-[#00A7DE] opacity-90" />
 
             <div className="absolute bottom-1 left-2 flex gap-1 text-[7px] md:text-[8px] text-white/90">
               <span>✦</span>
@@ -218,15 +218,15 @@ export const TissueBoxAnimation = () => {
           </div>
 
           {/* Top face */}
-          <div className="absolute inset-x-2 bottom-[58%] h-[26%] rounded-t-xl bg-[#f49bc4] shadow-md" />
+          <div className="absolute inset-x-2 bottom-[58%] h-[26%] rounded-t-xl bg-[#00A7DE] shadow-md" />
 
           {/* Slot */}
-          <div className="absolute left-1/2 bottom-[58%] -translate-x-1/2 w-[70%] h-2 bg-[#b42b65] rounded-full shadow-sm" />
+          <div className="absolute left-1/2 bottom-[58%] -translate-x-1/2 w-[70%] h-2 bg-[#0177D1] rounded-full shadow-sm" />
           {/* CTA text below the box, centered */}
           <button
             type="button"
             className="mt-20 z-50 text-[10px] md:text-[15px] text-center font-bold underline"
-            style={{ color: "royalblue",  alignItems:"center" }}
+            style={{ color: "#282650",  alignItems:"center" }}
             onClick={(e) => {
               e.stopPropagation(); // prevent tissue burst
               scrollToContact();

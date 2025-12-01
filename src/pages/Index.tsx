@@ -13,6 +13,9 @@ import { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
 import { Footer } from "@/components/Footer";
 import CertificationsSection from "@/components/certifications";
+import { ClientsSection } from "@/components/ClientsSection";
+import ClientsGlobeSection from "@/components/ClientsGlobeSection";
+import ClientsCloudSection from "@/components/ClientsCloudSection";
 
 const Index = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -78,6 +81,7 @@ const Index = () => {
       <Products onAddToEnquiry={handleAddToEnquiry} />
       <Quality />
       <B2B onEnquiryOpen={() => setCartOpen(true)} />
+        <ClientsGlobeSection />
       <FAQ />
       <Contact />
       <EnquiryCart
