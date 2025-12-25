@@ -97,7 +97,7 @@ const ClientsGlobeSection: React.FC = () => {
   return (
     <section
       id="clients"
-      className="pt-3 relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f5fcff] via-[#d4f0ff] to-[#aee1fb]"
+      className=" relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f5fcff] via-[#d4f0ff] to-[#aee1fb]"
     >
       {/* Background accents */}
       <div className="pointer-events-none absolute inset-0 opacity-80">
