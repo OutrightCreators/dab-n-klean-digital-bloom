@@ -233,7 +233,7 @@ const ProductsPage = () => {
     "https://www.amazon.in/stores/DABNKLEAN/page/DD886C88-913C-4CA8-97EA-9047078F4BC2?lp_asin=B08KY75Z8P&ref_=cm_sw_r_ud_sf_stores_RFZTEPX8DT0RE0VJRM7V&store_ref=bl_ast_dp_brandLogo_sto";
 
   const flipkartUrl =
-    "https://www.flipkart.com/dab-n-klean-facial-tissues/p/itm4035855f704fa";
+    "https://www.flipkart.com/search?q=dab%20n%20klean&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off";
 
 
   return (

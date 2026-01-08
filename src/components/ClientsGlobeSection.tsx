@@ -63,7 +63,7 @@ const clients: ClientLogo[] = [
   {
     name: "Flipkart",
     logo: "/logos/flipkart.png",
-    url: "https://www.flipkart.com/dab-n-klean-facial-tissues/p/itm4035855f704fa",
+    url: "https://www.flipkart.com/search?q=dab%20n%20klean&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
   },
 ];
 

@@ -12,6 +12,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { FallingPattern } from "@/components/ui/falling-pattern";
 import { motion } from "motion/react";
 import { submitForm } from "@/lib/submitForm";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const ContactPage = () => {
   const [cartItems] = useState<any[]>([]);
@@ -215,6 +216,30 @@ const ContactPage = () => {
                       </div>
                     </div>
                   </div>
+
+                   <div className="flex items-center gap-4 pt-2">
+              <a
+                href="https://www.facebook.com/dabnklean"
+                className="transition-colors hover:text-[#E5C548]"
+                aria-label="Visit our Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/dabnklean/"
+                className="transition-colors hover:text-[#E5C548]"
+                aria-label="Visit our Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://in.linkedin.com/in/dab-n-klean-4a4320167"
+                className="transition-colors hover:text-[#E5C548]"
+                aria-label="Visit our LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
 
                   <div className="pt-4 border-t border-primary/10">
                     <p className="text-xs md:text-sm text-muted-foreground">

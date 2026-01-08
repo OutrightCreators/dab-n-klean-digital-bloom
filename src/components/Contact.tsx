@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { submitForm } from "@/lib/submitForm";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -196,6 +197,29 @@ export const Contact = () => {
                   </div>
                 </div>
               </div>
+                               <div className="flex items-center gap-4 pt-2">
+                            <a
+                              href="https://www.facebook.com/dabnklean"
+                              className="transition-colors hover:text-[#E5C548]"
+                              aria-label="Visit our Facebook"
+                            >
+                              <Facebook className="h-5 w-5" />
+                            </a>
+                            <a
+                              href="https://www.instagram.com/dabnklean/"
+                              className="transition-colors hover:text-[#E5C548]"
+                              aria-label="Visit our Instagram"
+                            >
+                              <Instagram className="h-5 w-5" />
+                            </a>
+                            <a
+                              href="https://in.linkedin.com/in/dab-n-klean-4a4320167"
+                              className="transition-colors hover:text-[#E5C548]"
+                              aria-label="Visit our LinkedIn"
+                            >
+                              <Linkedin className="h-5 w-5" />
+                            </a>
+                          </div>
 
               <div
                 className="pt-4 border-t border-border/60"

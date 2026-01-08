@@ -54,21 +54,21 @@ export const Footer = () => {
 
             <div className="flex items-center gap-4 pt-2">
               <a
-                href="#"
+                href="https://www.facebook.com/dabnklean"
                 className="transition-colors hover:text-[#FFF2F3]"
                 aria-label="Visit our Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/dabnklean/"
                 className="transition-colors hover:text-[#FFF2F3]"
                 aria-label="Visit our Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://in.linkedin.com/in/dab-n-klean-4a4320167"
                 className="transition-colors hover:text-[#FFF2F3]"
                 aria-label="Visit our LinkedIn"
               >
